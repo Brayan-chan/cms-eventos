@@ -1,0 +1,8 @@
+.profile-picture {
+    width: 32px; /* Ajusta el ancho */
+    height: 32px; /* Ajusta la altura */
+    object-fit: cover; /* Asegura que la imagen se recorte bien */
+    border-radius: 50%; /* Hace la imagen redonda */
+    border: 2px solid #ccc; /* Añade un borde */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra */
+}
