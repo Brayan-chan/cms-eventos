@@ -1,8 +1,140 @@
 .profile-picture {
-    width: 32px; /* Ajusta el ancho */
-    height: 32px; /* Ajusta la altura */
-    object-fit: cover; /* Asegura que la imagen se recorte bien */
-    border-radius: 50%; /* Hace la imagen redonda */
-    border: 2px solid #ccc; /* Añade un borde */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra */
+    width: 120px;
+    height: 120px;
+    object-fit: cover; /* Mantiene la proporción recortando si es necesario */
+    border-radius: 50%; /* Hace que la imagen sea circular */
+    border: 2px solid #ccc;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: transform 0.3s ease; /* Añade animación al hover */
 }
+
+.profile-picture:hover {
+    transform: scale(1.1); /* Agranda la imagen al pasar el cursor */
+    opacity: 0.8;
+}
+
+/* Estilos generales */
+body {
+    background-color: #000;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f4f4f4;
+}
+
+/* Botones */
+button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button.deleteEventBtn {
+    background-color: #dc3545;
+}
+
+button.deleteEventBtn:hover {
+    background-color: #c82333;
+}
+
+/* Modal */
+.modal {
+    display: none; /* Ocultar por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.active {
+    display: flex; /* Mostrar cuando se active */
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.modal-content form input,
+.modal-content form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.modal-content form button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Mensajes de éxito/error */
+.success {
+    color: green;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    margin: 10px 0;
+}
+

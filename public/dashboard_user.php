@@ -58,9 +58,11 @@ $historial = $historial_stmt->fetchAll();
                 <?php foreach ($eventos as $evento) : ?>
                     <div class="event-card">
                         <h3><?= htmlspecialchars($evento['title']); ?></h3>
+                        <!-- Mostrar la imagen destacada del evento -->
+                        <img class="featured_image" src="<?= htmlspecialchars($evento['featured_image'] ?? 'images/events/default.png'); ?>" alt="Foto de perfil">
                         <p>Fecha: <?= date("d/m/Y H:i", strtotime($evento['date'])); ?></p>
                         <p>Lugar: <?= htmlspecialchars($evento['location']); ?></p>
-                        <form method="POST" action="../controllers/dashboard.php?action=preregistrar">
+                        <form method="POST" action="`../controllers/dashboard.php?action=pre-registrar&id=${eventId}`">
                             <input type="hidden" name="event_id" value="<?= $evento['id']; ?>">
                             <button type="submit">Pre-registrarse</button>
                         </form>

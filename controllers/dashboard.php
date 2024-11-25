@@ -5,6 +5,23 @@ require '../config/db.php';
 // Validar acción solicitada
 if (isset($_GET['action'])) {
     switch ($_GET['action']) {
+        // Preregistrar a un usuario en un evento
+        case 'pre_registrar':
+            // se tiene lo siguiente `../controllers/dashboard.php?action=pre_registrar&id=${eventId}`
+            if (isset($_GET['id'])) {
+                $event_id = $_GET['id'];
+                $stmt = $pdo->prepare("INSERT INTO pre_registrations (user_id, event_id) VALUES (?, ?)");
+                $stmt->execute([$_SESSION['user_id'], $event_id]);
+
+                header('Location: ../public/dashboard_user.php');
+                exit();
+            } else {
+                http_response_code(400);
+                echo json_encode(['error' => 'ID de evento no proporcionado']);
+                exit();
+            }
+        break;
+
         case 'update_profile':
             if ($_POST['name'] && $_POST['matricula']) {
                 $name = $_POST['name'];
