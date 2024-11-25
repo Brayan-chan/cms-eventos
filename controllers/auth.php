@@ -16,7 +16,6 @@
         header('Location: ../public/login.php');
         exit();
     }    
-
     if ($_GET['action'] === 'login') {
         session_start();
         require '../config/db.php';
